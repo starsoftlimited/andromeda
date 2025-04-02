@@ -10,3 +10,15 @@
     external-docs:
       - "https://<>"
   relations: {}
+- identifier: OBIE-Path1
+  title: OBIE-Path1
+  icon: null
+  blueprint: standard
+  properties:
+    name: OBIE
+    version: 3.1.11
+    internal-docs:
+      - "https://<>"
+    external-docs:
+      - "https://<>"
+  relations: {}
