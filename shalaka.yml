@@ -1,0 +1,12 @@
+- identifier: OBIE-beta
+  title: OBIE-beta
+  icon: null
+  blueprint: standard
+  properties:
+    name: OBIE
+    version: 3.1.11
+    internal-docs:
+      - "https://<>"
+    external-docs:
+      - "https://<>"
+  relations: {}
