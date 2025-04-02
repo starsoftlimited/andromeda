@@ -1,0 +1,84 @@
+- kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: shalaka.yml
+        - repos: '*'
+          skipParsing: true
+    port:
+      entity:
+        mappings:
+          identifier: .file.content[].identifier
+          title: .file.content[].title
+          blueprint: '"standard-blueprint"'
+          properties:
+            name: .file.content[].properties.name
+            version: .file.content[].properties.version
+  - kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: shalaka.yml
+        - repos: '*'
+          skipParsing: true
+    port:
+      itemsToParse: .file.content
+      entity:
+        mappings:
+          identifier: .item.identifier
+          title: .item.title
+          blueprint: '"standard-blueprint"'
+          properties:
+            name: .item.properties.name
+            version: .item.properties.version
+ - kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: '**/my-user.yml'
+        - repos:
+            - cd0157-Server-Deployment-and-Containerization-shop-app
+    port:
+      itemsToParse: .file.content
+      entity:
+        mappings:
+          identifier: .item.identifier
+          title: .item.title
+          blueprint: '"_user"'
+          properties:
+            port_type: .item.properties.port_type
+            port_role: .item.properties.port_role
+            status: .item.properties.status
+          relations: {}
+  - kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: '**/shalaka.yml'
+        - repos: '*'
+          skipParsing: true
+    port:
+      entity:
+        mappings:
+          identifier: .file.content[].identifier
+          title: .file.content[].title
+          blueprint: '"standard-blueprint"'
+          properties:
+            name: .file.content[].title
+            version: .file.content[].title
+  - kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: '**/my-user.yml'
+        - repos: '*'
+    port:
+      itemsToParse: .file.content
+      entity:
+        mappings:
+          identifier: .item.identifier
+          title: .item.title
+          blueprint: '"standard-blueprint"'
+          properties:
+            name: .item.properties.port_type
+            version: .item.properties.port_role

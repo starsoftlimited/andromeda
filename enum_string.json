@@ -1,0 +1,26 @@
+{
+    "identifier": "microservice819",
+    "title": "Microservice819",
+    "icon": "Microservice",
+    "schema": {
+      "properties": {
+        "myStringProp": {
+          "type": "string",
+          "title": "My string",
+          "enum": [
+            "my-option-1",
+            "my-option-2"
+          ],
+          "enumColors": {
+            "my-option-1": "red",
+            "my-option-2": "green"
+          }
+        }
+      },
+      "required": []
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "aggregationProperties": {},
+    "relations": {}
+  }

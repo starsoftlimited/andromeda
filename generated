@@ -1,0 +1,73 @@
+# __generated__ by Terraform
+# Please review these resources and move them into your main configuration files.
+
+# __generated__ by Terraform from "_team"
+resource "port_blueprint" "_team" {
+  provider                    = port-labs
+  calculation_properties      = null
+  create_catalog_page         = true
+  description                 = "This blueprint is synced with Port teams"
+  force_delete_entities       = false
+  icon                        = "Team"
+  identifier                  = "_team"
+  kafka_changelog_destination = null
+  mirror_properties           = null
+  ownership                   = null
+  properties = {
+    array_props   = null
+    boolean_props = null
+    number_props  = null
+    object_props  = null
+    string_props = {
+      continent = {
+        default             = null
+        description         = null
+        enum                = null
+        enum_colors         = null
+        format              = null
+        icon                = null
+        max_length          = null
+        min_length          = null
+        pattern             = null
+        required            = false
+        spec                = null
+        spec_authentication = null
+        title               = "continent"
+      }
+      description = {
+        default             = null
+        description         = null
+        enum                = null
+        enum_colors         = null
+        format              = null
+        icon                = null
+        max_length          = null
+        min_length          = null
+        pattern             = null
+        required            = false
+        spec                = null
+        spec_authentication = null
+        title               = "Description"
+      }
+      india = {
+        default             = null
+        description         = null
+        enum                = null
+        enum_colors         = null
+        format              = null
+        icon                = null
+        max_length          = null
+        min_length          = null
+        pattern             = null
+        required            = false
+        spec                = null
+        spec_authentication = null
+        title               = "India"
+      }
+    }
+  }
+  relations                     = null
+  team_inheritance              = null
+  title                         = "Team"
+  webhook_changelog_destination = null
+}

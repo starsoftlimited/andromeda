@@ -1,0 +1,15 @@
+  terraform {
+  required_providers {
+    port = {
+      source  = "port-labs/port-labs"
+      version = "~> 2.0.3"
+    }
+  }
+  }
+
+
+ provider "port" {
+  client_id = "MkWzCVL5BvtLxOXW0FLXz8Wx98TmsupU"     # or set the environment variable PORT_CLIENT_ID
+  secret    = "Dlf43s9knxxJI99o6xuW7TGbKIeyQ0QfH70oF2eDpMBtxO2xCvYJqIBjEoW7IfRc" # or set the environment variable PORT_CLIENT_SECRET
+  base_url  = "https://api.getport.io"
+}

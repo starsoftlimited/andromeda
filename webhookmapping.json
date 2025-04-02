@@ -1,0 +1,32 @@
+{
+  "blueprint": "azureDevopsWorkItem",
+  "operation": "create",
+  "filter": "(.body.eventType | IN(\"workitem.created\", \"workitem.restored\")) and (.body.resource.fields.\"System.State\" | IN(\"Done\", \"Closed\", \"Removed\", \"Resolved\", \"Completed\") | not)",
+  "entity": {
+      "identifier": ".body.resource.workItemId // .body.resource.id | tostring",
+      "title": ".body.resource.fields.\"System.Title\" | tostring",
+      "properties": {
+          "type": ".body.resource.fields.\"System.WorkItemType\"",
+          "state": ".body.resource.fields.\"System.State\"",
+          "effort": ".body.resource.fields.\"Microsoft.VSTS.Scheduling.Effort\" | ascii_downcase?",
+          "description": ".body.resource.fields.\"System.Description\"",
+          "reason": ".body.resource.fields.\"System.Reason\"",
+          "createdBy": ".body.resource.fields.\"System.CreatedBy\" | if type == \"string\" then split(\" <\")[1] | rtrimstr(\">\")  | ascii_downcase else empty end",
+          "changedBy": ".body.resource.fields.\"System.ChangedBy\"  | if type == \"string\" then split(\" <\")[1] | rtrimstr(\">\")  | ascii_downcase else empty end",
+          "createdDate": ".body.resource.fields.\"System.CreatedDate\"",
+          "changedDate": ".body.resource.fields.\"System.ChangedDate\"",
+          "assigned_to": ".body.resource.fields.\"System.AssignedTo\"  | if type == \"string\" then split(\" <\")[1] | rtrimstr(\">\")  | ascii_downcase else empty end",
+          "remaining_work": ".body.resource.fields.\"Microsoft.VSTS.Scheduling.RemainingWork\"",
+          "priority": ".body.resource.fields.\"Microsoft.VSTS.Common.Priority\"",
+          "original_estimate": ".body.resource.fields.\"Microsoft.VSTS.Scheduling.OriginalEstimate\"",
+          "completed_work": ".body.resource.fields.\"Microsoft.VSTS.Scheduling.CompletedWork\"",
+          "effort_size": ".body.resource.fields.\"Microsoft.VSTS.Scheduling.Size\"",
+          "is_request_number": ".body.resource.fields.\"Federated.IS.RequestNumber\"",
+          "tags": ".body.resource.fields.\"System.Tags\" // \"\" | split(\"; \")",
+          "iteration": ".body.resource.fields.\"System.IterationPath\""
+      },
+      "relations": {
+          "domain": "{\"combinator\": \"and\", \"rules\": [{\"property\": \"release\", \"operator\": \"=\", \"value\": \"yes\"}]}"
+      }
+  }
+}

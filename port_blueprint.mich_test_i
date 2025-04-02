@@ -1,0 +1,42 @@
+# __generated__ by Terraform
+# Please review these resources and move them into your main configuration files.
+
+# __generated__ by Terraform from "mich_test_i"
+resource "port_blueprint" "mich_test_i" {
+  provider                    = port-labs
+  calculation_properties      = null
+  create_catalog_page         = true
+  description                 = null
+  force_delete_entities       = false
+  icon                        = "Microservice"
+  identifier                  = "mich_test_i"
+  kafka_changelog_destination = null
+  mirror_properties           = null
+  properties = {
+    array_props = {
+      someting_metric = {
+        boolean_items = null
+        description   = null
+        icon          = null
+        max_items     = null
+        min_items     = null
+        number_items  = null
+        object_items  = null
+        required      = false
+        string_items = {
+          default = ["Option One"]
+          format  = null
+        }
+        title = "Someting Metric"
+      }
+    }
+    boolean_props = null
+    number_props  = null
+    object_props  = null
+    string_props  = null
+  }
+  relations                     = null
+  team_inheritance              = null
+  title                         = "mich_test_i"
+  webhook_changelog_destination = null
+}
