@@ -1,0 +1,13 @@
+- identifier: OBIE-Path4
+  title: OBIE-Path4
+  icon: null
+  blueprint: standard
+  properties:
+    name: OBIE
+    version: 3.1.12
+    internal-docs:
+      - "https://<>"
+    external-docs:
+      - "https://<>"
+  relations: {}
+  
